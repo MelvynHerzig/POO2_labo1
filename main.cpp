@@ -5,7 +5,7 @@
  Auteur(s)   : Forestier Quentin & Melvyn Herzig
  Date        : 24.02.2021
 
- But         : Tester l'implémentation de la classe Matrice
+ But         : Tester l'implémentation de la classe Matrix
 
  Remarque(s) : /
 
@@ -13,10 +13,22 @@
  -----------------------------------------------------------------------------------
  */
 
-#include <iostream>
+#include <iostream> // cout
+
+#include "Matrix.h"
+
+using namespace std;
 
 int main ()
 {
-   std::cout << "Hello, World!" << std::endl;
-   return 0;
+
+   Matrix m2 = Matrix(2,4, 5);
+   cout << m2 << endl;
+
+   Matrix m1 = Matrix(4,2, 5);
+   cout << m1 << endl;
+
+   cout << m1.multToVal(m2) << endl;
+
+   return EXIT_SUCCESS;
 }

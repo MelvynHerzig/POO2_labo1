@@ -142,32 +142,113 @@ POO2_labo1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/build
 .PHONY : POO2_labo1/fast
 
-Matrice.obj: Matrice.cpp.obj
+MatriceMult.obj: MatriceMult.cpp.obj
 
-.PHONY : Matrice.obj
+.PHONY : MatriceMult.obj
 
 # target to build an object file
-Matrice.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrice.cpp.obj
-.PHONY : Matrice.cpp.obj
+MatriceMult.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj
+.PHONY : MatriceMult.cpp.obj
 
-Matrice.i: Matrice.cpp.i
+MatriceMult.i: MatriceMult.cpp.i
 
-.PHONY : Matrice.i
+.PHONY : MatriceMult.i
 
 # target to preprocess a source file
-Matrice.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrice.cpp.i
-.PHONY : Matrice.cpp.i
+MatriceMult.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.i
+.PHONY : MatriceMult.cpp.i
 
-Matrice.s: Matrice.cpp.s
+MatriceMult.s: MatriceMult.cpp.s
 
-.PHONY : Matrice.s
+.PHONY : MatriceMult.s
 
 # target to generate assembly for a file
-Matrice.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrice.cpp.s
-.PHONY : Matrice.cpp.s
+MatriceMult.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.s
+.PHONY : MatriceMult.cpp.s
+
+Matrix.obj: Matrix.cpp.obj
+
+.PHONY : Matrix.obj
+
+# target to build an object file
+Matrix.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj
+.PHONY : Matrix.cpp.obj
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
+MatrixAdd.obj: MatrixAdd.cpp.obj
+
+.PHONY : MatrixAdd.obj
+
+# target to build an object file
+MatrixAdd.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj
+.PHONY : MatrixAdd.cpp.obj
+
+MatrixAdd.i: MatrixAdd.cpp.i
+
+.PHONY : MatrixAdd.i
+
+# target to preprocess a source file
+MatrixAdd.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.i
+.PHONY : MatrixAdd.cpp.i
+
+MatrixAdd.s: MatrixAdd.cpp.s
+
+.PHONY : MatrixAdd.s
+
+# target to generate assembly for a file
+MatrixAdd.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.s
+.PHONY : MatrixAdd.cpp.s
+
+MatrixSub.obj: MatrixSub.cpp.obj
+
+.PHONY : MatrixSub.obj
+
+# target to build an object file
+MatrixSub.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj
+.PHONY : MatrixSub.cpp.obj
+
+MatrixSub.i: MatrixSub.cpp.i
+
+.PHONY : MatrixSub.i
+
+# target to preprocess a source file
+MatrixSub.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.i
+.PHONY : MatrixSub.cpp.i
+
+MatrixSub.s: MatrixSub.cpp.s
+
+.PHONY : MatrixSub.s
+
+# target to generate assembly for a file
+MatrixSub.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.s
+.PHONY : MatrixSub.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -205,9 +286,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... POO2_labo1
-	@echo ... Matrice.obj
-	@echo ... Matrice.i
-	@echo ... Matrice.s
+	@echo ... MatriceMult.obj
+	@echo ... MatriceMult.i
+	@echo ... MatriceMult.s
+	@echo ... Matrix.obj
+	@echo ... Matrix.i
+	@echo ... Matrix.s
+	@echo ... MatrixAdd.obj
+	@echo ... MatrixAdd.i
+	@echo ... MatrixAdd.s
+	@echo ... MatrixSub.obj
+	@echo ... MatrixSub.i
+	@echo ... MatrixSub.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
