@@ -178,7 +178,7 @@ void Matrix::makeOperation (const Matrix& m, const MatrixOperator &mo)
 // pas à pMatrix
 void Matrix::realloc (std::size_t newHeight, std::size_t newWidth, unsigned pModulus, unsigned** pMatrix, std::size_t pHeight, std::size_t pWidth)
 {
-   if (newHeight == 0 || newWidth == 0 || pModulus == 1) throw runtime_error("Argument(s) invalide(s)");
+   if (newHeight == 0 || newWidth == 0 || pModulus == 0) throw runtime_error("Argument(s) invalide(s)");
 
    unsigned **temp = new unsigned *[newHeight];
 
