@@ -142,33 +142,6 @@ POO2_labo1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/build
 .PHONY : POO2_labo1/fast
 
-MatriceMult.obj: MatriceMult.cpp.obj
-
-.PHONY : MatriceMult.obj
-
-# target to build an object file
-MatriceMult.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj
-.PHONY : MatriceMult.cpp.obj
-
-MatriceMult.i: MatriceMult.cpp.i
-
-.PHONY : MatriceMult.i
-
-# target to preprocess a source file
-MatriceMult.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.i
-.PHONY : MatriceMult.cpp.i
-
-MatriceMult.s: MatriceMult.cpp.s
-
-.PHONY : MatriceMult.s
-
-# target to generate assembly for a file
-MatriceMult.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.s
-.PHONY : MatriceMult.cpp.s
-
 Matrix.obj: Matrix.cpp.obj
 
 .PHONY : Matrix.obj
@@ -222,6 +195,33 @@ MatrixAdd.s: MatrixAdd.cpp.s
 MatrixAdd.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.s
 .PHONY : MatrixAdd.cpp.s
+
+MatrixMult.obj: MatrixMult.cpp.obj
+
+.PHONY : MatrixMult.obj
+
+# target to build an object file
+MatrixMult.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj
+.PHONY : MatrixMult.cpp.obj
+
+MatrixMult.i: MatrixMult.cpp.i
+
+.PHONY : MatrixMult.i
+
+# target to preprocess a source file
+MatrixMult.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.i
+.PHONY : MatrixMult.cpp.i
+
+MatrixMult.s: MatrixMult.cpp.s
+
+.PHONY : MatrixMult.s
+
+# target to generate assembly for a file
+MatrixMult.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POO2_labo1.dir\build.make CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.s
+.PHONY : MatrixMult.cpp.s
 
 MatrixSub.obj: MatrixSub.cpp.obj
 
@@ -286,15 +286,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... POO2_labo1
-	@echo ... MatriceMult.obj
-	@echo ... MatriceMult.i
-	@echo ... MatriceMult.s
 	@echo ... Matrix.obj
 	@echo ... Matrix.i
 	@echo ... Matrix.s
 	@echo ... MatrixAdd.obj
 	@echo ... MatrixAdd.i
 	@echo ... MatrixAdd.s
+	@echo ... MatrixMult.obj
+	@echo ... MatrixMult.i
+	@echo ... MatrixMult.s
 	@echo ... MatrixSub.obj
 	@echo ... MatrixSub.i
 	@echo ... MatrixSub.s

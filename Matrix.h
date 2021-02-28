@@ -44,14 +44,12 @@ private:
    std::size_t height; // Heuteur de la matrix
    std::size_t width;  // Largeur de la matrix
 
-   bool init = true;
-
    // ----------- Constructeurs ------------
 private:
-   Matrix();
+   Matrix(const Matrix* m1, const MatrixOperator* mo = nullptr, const Matrix* m2 = nullptr);
 
 public:
-   Matrix(std::size_t pHeight, std::size_t pWidth, unsigned pModulus);
+   Matrix(std::size_t height, std::size_t width, unsigned modulus);
    Matrix(const Matrix& m);
 
 public:
@@ -61,34 +59,39 @@ public:
    // ----------- Opération ------------
 
    // Multiplication
-   Matrix& multOnSelf(const Matrix& m);
-   Matrix  multToVal (const Matrix& m) const;
+   Matrix operator*(const Matrix& m) const;
+   Matrix& operator*=(const Matrix& m);
    Matrix* multToPtr (const Matrix& m);
 
    // Addition
-   Matrix& addOnSelf(const Matrix& m);
-   Matrix  addToVal (const Matrix& m) const;
+   Matrix operator+(const Matrix& m) const;
+   Matrix& operator+=(const Matrix& m);
    Matrix* addToPtr (const Matrix& m);
 
    // Soustraction
-   Matrix& subOnSelf(const Matrix& m);
-   Matrix  subToVal (const Matrix& m) const;
+   Matrix operator-(const Matrix& m) const;
+   Matrix& operator-=(const Matrix& m);
    Matrix* subToPtr (const Matrix& m);
+
+   // Affectation
+   Matrix& operator=(const Matrix& m);
 
 
 private:
    //  ----------- Utilitaires ------------
-   void makeOperation(const Matrix& m, const MatrixOperator& mo);
-   void realloc(std::size_t newHeight, std::size_t newWidth, unsigned pModulus, unsigned** pMatrix = nullptr, std::size_t pHeight = 0, std::size_t pWidth = 0);
    void freeContent();
 
-   unsigned** makeNewMatrix(std::size_t newHeight, std::size_t newWidth, const Matrix* m1 = nullptr, MatrixOperator *pMo = nullptr, const Matrix* m2 = nullptr);
+   void makeNewMatrix(const Matrix* m1, const MatrixOperator *mo = nullptr, const Matrix* m2 = nullptr);
 
    //  ----------- Manipulation ------------
    unsigned getElementNoException(std::size_t row, std::size_t col) const;
+
+   //  ----------- Operation ------------
+   Matrix  opToVal (const Matrix& m, const MatrixOperator* op) const;
+   Matrix& opOnSelf(const Matrix& m, const MatrixOperator* op);
+   Matrix* opToPtr (const Matrix& m, const MatrixOperator* op);
+
 };
-
-
 
 
 #endif //POO2_LABO1_MATRIX_H

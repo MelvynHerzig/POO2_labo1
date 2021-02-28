@@ -9,9 +9,9 @@
  -----------------------------------------------------------------------------------
  */
 
-#include "MatriceMult.h"
+#include "MatrixMult.h"
 
-unsigned MatriceMult::operation (unsigned int x1, unsigned int x2) const
+unsigned MatrixMult::operation (unsigned int x1, unsigned int x2) const
 {
    return x1 * x2;
 }
