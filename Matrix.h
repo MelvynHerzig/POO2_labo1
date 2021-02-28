@@ -24,10 +24,17 @@
 
 #include "MatrixOperator.h" // operation, MatrixOperator
 
+
+/**
+ * @brief Class implémentant des Matrices dont le contenu et définit modulo N.
+ *        Les opérations sont éffectuée élément par élément.
+ *        Si deux matrices ne sont pas de même taille, la matrice résultante
+ *        et la fusion le la valeur max de leur taille et dont les opérandes
+ *        manquand sont remplacé par des 0
+ */
 class Matrix
 {
 friend std::ostream& operator<<(std::ostream& os, const Matrix& m);
-friend Matrix operator*(std::ostream& os, const Matrix& m);
 
 private:
 

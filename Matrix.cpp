@@ -13,8 +13,9 @@
 #include <time.h>        // time
 #include <algorithm>     // swap
 #include "MatriceMult.h" // MatriceMult
-#include "MatrixAdd.h"  // MatrixAdd
-#include "MatrixSub.h"  // MatrixSub
+#include "MatrixAdd.h"   // MatrixAdd
+#include "MatrixSub.h"   // MatrixSub
+
 #include "Matrix.h"
 
 using namespace std;

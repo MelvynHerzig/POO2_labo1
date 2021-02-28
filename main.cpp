@@ -19,6 +19,12 @@
 
 using namespace std;
 
+/**
+ * @brief Point d'entrée du programme. Programme de test.
+ * @param argc Nombre d'arguments reçus.
+ * @param argv Valeurs des arguments.
+ * @return EXIT_SUCCESS en cas d'exécution complète.
+ */
 int main (int argc, char *argv[])
 {
    if(argc != 6)
@@ -31,12 +37,11 @@ int main (int argc, char *argv[])
    y2 = stoul(argv[4]);
    modulus = stoul(argv[5]);
 
-   cout << "\n------------ Test des entrees utilisateur ------------" << endl;
+   cout << "\n------------ Test des entrees utilisateur ------------ \n"
+        << "The modulus is "  << modulus << endl << endl;
 
    Matrix m1 = Matrix(x1, y1, modulus);
    Matrix m2 = Matrix(x2, y2, modulus);
-
-   cout << "The modulus is "  << modulus << endl << endl;
 
    cout << "m1\n" << m1 << endl;
    cout << "m2\n" << m2 << endl;

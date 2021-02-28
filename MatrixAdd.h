@@ -18,9 +18,21 @@
 
 #include "MatrixOperator.h" // operation
 
+
+/**
+ * @brief Classe mettant en oeuvre les additions
+ *        qui peuvent être effectuée par la classe Matrix.
+ */
 class MatrixAdd : public MatrixOperator
 {
 public:
+
+   /**
+    * @brief Méthode à implémentant l'addition entre deux matrices Matrix.
+    * @param x1 Élément de la première matrice.
+    * @param x2 Élément de la seconde matrice.
+    * @return Retourne le résultat de l'addition.
+    */
    unsigned operation(unsigned x1, unsigned x2) const;
 };
 

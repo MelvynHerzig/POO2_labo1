@@ -18,9 +18,20 @@
 
 #include "MatrixOperator.h" // operation
 
+/**
+ * @brief Classe mettant en oeuvre les soustractions
+ *        qui peuvent être effectuée par la classe Matrix.
+ */
 class MatrixSub : public MatrixOperator
 {
 public:
+
+   /**
+   * @brief Méthode à implémentant la soustraction entre deux matrices Matrix.
+   * @param x1 Élément de la première matrice.
+   * @param x2 Élément de la seconde matrice.
+   * @return Retourne le résultat de la soustraction.
+   */
    unsigned operation(unsigned x1, unsigned x2) const;
 };
 

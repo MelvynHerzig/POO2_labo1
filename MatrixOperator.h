@@ -17,9 +17,20 @@
 #ifndef POO2_LABO1_MATRIXOPERATOR_H
 #define POO2_LABO1_MATRIXOPERATOR_H
 
+/**
+ * @brief Classe mettant en oeuvre les opérations
+ *        qui peuvent être effectuée par la classe Matrix.
+ */
 class MatrixOperator
 {
 public:
+
+   /**
+    * @brief Méthode à implémenter pour définir une opération de Matrix.
+    * @param x1 Élément de la première matrice.
+    * @param x2 Élément de la seconde matrice.
+    * @return Retourne le résultat de l'opération définie.
+    */
    virtual unsigned operation(unsigned x1, unsigned x2) const = 0;
 };
 
