@@ -37,6 +37,9 @@ ostream& operator<< (ostream& os, const Matrix& m)
 }
 
 // ----------- Constructeurs ------------
+Matrix::Matrix () : modulus(1), matrix(nullptr), height(0), width(0)
+{}
+
 Matrix::Matrix (const Matrix* m1, const MatrixOperator* mo, const Matrix* m2) : matrix(nullptr), height(0), width(0)
 {
    makeNewMatrix(m1, mo, m2);

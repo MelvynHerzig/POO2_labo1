@@ -49,6 +49,7 @@ private:
    Matrix(const Matrix* m1, const MatrixOperator* mo = nullptr, const Matrix* m2 = nullptr);
 
 public:
+   Matrix();
    Matrix(std::size_t height, std::size_t width, unsigned modulus);
    Matrix(const Matrix& m);
 
