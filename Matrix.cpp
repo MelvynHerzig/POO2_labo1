@@ -72,7 +72,7 @@ Matrix::~Matrix ()
    freeContent();
 }
 
-//// ----------- Opération ------------
+// ----------- Opération ------------
 Matrix Matrix::operator*(const Matrix &m) const
 {
    MatrixMult op = MatrixMult();
