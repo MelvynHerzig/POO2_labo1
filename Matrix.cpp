@@ -10,11 +10,11 @@
  */
 
 #include <stdexcept>     // runtime_error
-#include <time.h>        // time
 #include <algorithm>     // swap
-#include "MatriceMult.h" // MatriceMult
+#include "MatrixMult.h"  // MatrixMult
 #include "MatrixAdd.h"   // MatrixAdd
 #include "MatrixSub.h"   // MatrixSub
+#include "Utils.h"       // positiveInteger
 
 #include "Matrix.h"
 
@@ -33,25 +33,38 @@ ostream& operator<< (ostream& os, const Matrix& m)
       os << endl;
    }
 
-   return os << endl;
+   return os;
 }
 
 // ----------- Constructeurs ------------
 Matrix::Matrix () : modulus(1), matrix(nullptr), height(0), width(0)
+{}
+
+Matrix::Matrix (const Matrix* m1, const MatrixOperator* mo, const Matrix* m2) : matrix(nullptr), height(0), width(0)
 {
-   if(init) srand((unsigned)time(NULL));
-   init = false;
+   makeNewMatrix(m1, mo, m2);
 }
 
-Matrix::Matrix (size_t pHeight, size_t pWidth, unsigned pModulus) : Matrix()
+Matrix::Matrix (size_t height, size_t width, unsigned modulus) : modulus(modulus), height(height), width(width)
 {
-   realloc(pHeight, pWidth, pModulus);
+   if(height == 0 || width == 0 || modulus == 0)
+      throw runtime_error("La taille et le module ne peuvent etre egaux a 0.");
+
+   matrix = new unsigned *[height];
+
+   for (size_t i = 0; i < height; ++i)
+   {
+      matrix[i] = new unsigned[width];
+
+      for (size_t j = 0; j < width; ++j)
+      {
+         matrix[i][j] = Utils::positiveInteger(modulus);
+
+      }
+   }
 }
 
-Matrix::Matrix (const Matrix &m) : Matrix()
-{
-   realloc(m.height, m.width, m.modulus, m.matrix, m.height, m.width);
-}
+Matrix::Matrix (const Matrix &m) : Matrix(&m) {}
 
 // ----------- Destructeur ------------
 Matrix::~Matrix ()
@@ -60,164 +73,85 @@ Matrix::~Matrix ()
 }
 
 //// ----------- Opération ------------
-
-// Multiplication
-Matrix& Matrix::multOnSelf (const Matrix &m)
+Matrix Matrix::operator*(const Matrix &m) const
 {
-   const MatriceMult mo;
-   makeOperation(m, mo);
+   MatrixMult op = MatrixMult();
+   return opToVal(m, &op);
+}
+
+Matrix &Matrix::operator*= (const Matrix &m)
+{
+   MatrixMult op = MatrixMult();
+   return opOnSelf(m, &op);
+}
+Matrix *Matrix::multToPtr (const Matrix &m) const
+{
+   MatrixMult op = MatrixMult();
+   return opToPtr(m, &op);
+}
+
+Matrix Matrix::operator+ (const Matrix &m) const
+{
+   MatrixAdd op = MatrixAdd();
+   return opToVal(m, &op);
+}
+
+Matrix &Matrix::operator+= (const Matrix &m)
+{
+   MatrixAdd op = MatrixAdd();
+   return opOnSelf(m, &op);
+}
+
+Matrix *Matrix::addToPtr (const Matrix &m) const
+{
+   MatrixAdd op = MatrixAdd();
+   return opToPtr(m, &op);
+}
+
+Matrix Matrix::operator- (const Matrix &m) const
+{
+   MatrixSub op = MatrixSub();
+   return opToVal(m, &op);
+}
+
+Matrix &Matrix::operator-= (const Matrix &m)
+{
+   MatrixSub op = MatrixSub();
+   return opOnSelf(m, &op);
+}
+
+Matrix* Matrix::subToPtr (const Matrix &m) const
+{
+   MatrixSub op = MatrixSub();
+   return opToPtr(m, &op);
+}
+
+Matrix &Matrix::operator= (const Matrix &m)
+{
+   if(this != &m)
+   {
+      modulus = m.modulus;
+      makeNewMatrix(&m);
+   }
    return *this;
-}
-
-Matrix Matrix::multToVal(const Matrix &m) const
-{
-   Matrix temp = Matrix(*this);
-   temp.multOnSelf(m);
-   return temp;
-}
-
-Matrix* Matrix::multToPtr (const Matrix &m)
-{
-   Matrix* temp = new Matrix(*this);
-   try
-   {
-      (*temp).multOnSelf(m);
-      return temp;
-   }
-   catch(...)
-   {
-      delete temp;
-      return nullptr;
-   }
-}
-
-// Addition
-Matrix& Matrix::addOnSelf (const Matrix &m)
-{
-   MatrixAdd mo;
-   makeOperation(m, mo);
-   return *this;
-}
-
-Matrix Matrix::addToVal (const Matrix &m) const
-{
-   Matrix temp = Matrix(*this);
-   temp.addOnSelf(m);
-   return temp;
-}
-
-Matrix* Matrix::addToPtr (const Matrix &m)
-{
-   Matrix* temp = new Matrix(*this);
-   try
-   {
-      (*temp).addOnSelf(m);
-      return temp;
-   }
-   catch(...)
-   {
-      delete temp;
-      return nullptr;
-   }
-}
-
-// Soustraction
-Matrix& Matrix::subOnSelf (const Matrix &m)
-{
-   MatrixSub mo;
-   makeOperation(m, mo);
-   return *this;
-}
-
-Matrix Matrix::subToVal (const Matrix &m) const
-{
-   Matrix temp = Matrix(*this);
-   temp.subOnSelf(m);
-   return temp;
-}
-
-Matrix* Matrix::subToPtr (const Matrix &m)
-{
-   Matrix* temp = new Matrix(*this);
-   try
-   {
-      (*temp).subOnSelf(m);
-      return temp;
-   }
-   catch(...)
-   {
-      delete temp;
-      return nullptr;
-   }
 }
 
 //  ----------- Utilitaires ------------
-void Matrix::makeOperation (const Matrix& m, const MatrixOperator &mo)
-{
-   if(modulus != m.modulus) throw invalid_argument("Les deux matrices operees n ont pas le meme modulo.");
-
-   size_t maxWidth  = max(width , m.width );
-   size_t maxHeight = max(height, m.height);
-
-   realloc(maxHeight, maxWidth, modulus, matrix, height, width);
-
-   unsigned v1, v2;
-   for(size_t i = 0; i < maxHeight; ++i)
-   {
-      for(size_t j = 0; j < maxWidth; ++j)
-      {
-         v1 = getElementNoException(i,j);
-         v2 = m.getElementNoException(i,j);
-
-         matrix[i][j] = ( mo.operation(v1, v2) + modulus ) % modulus;
-      }
-   }
-
-}
-
-// Attention peut lever une out of range exception si pHeight et pWidth ne correspondent
-// pas à pMatrix
-void Matrix::realloc (std::size_t newHeight, std::size_t newWidth, unsigned pModulus, unsigned** pMatrix, std::size_t pHeight, std::size_t pWidth)
-{
-   if (newHeight == 0 || newWidth == 0 || pModulus == 0) throw runtime_error("Argument(s) invalide(s)");
-
-   unsigned **temp = new unsigned *[newHeight];
-
-   for (size_t i = 0; i < newHeight; ++i)
-   {
-      temp[i] = new unsigned[newWidth];
-
-      for (size_t j = 0; j < newWidth; ++j)
-      {
-         if(pMatrix == nullptr)
-         {
-            temp[i][j] = (unsigned) rand() %  pModulus;
-         }
-         if(pMatrix != nullptr)
-         {
-            if(i < pHeight && j < pWidth) temp[i][j] = pMatrix[i][j];
-            else temp[i][j] = 0;
-         }
-      }
-   }
-
-   freeContent();
-   swap(matrix, temp);
-   height = newHeight;
-   width = newWidth;
-   modulus = pModulus;
-}
-
 
 void Matrix::freeContent ()
 {
    if(matrix == nullptr) return;
+
    for(size_t i = 0; i < height; ++i)
    {
       delete[] matrix[i];
    }
 
    delete[] matrix;
+
+   matrix = nullptr;
+   height = 0;
+   width = 0;
 }
 
 unsigned Matrix::getElementNoException (std::size_t row, std::size_t col) const
@@ -225,17 +159,20 @@ unsigned Matrix::getElementNoException (std::size_t row, std::size_t col) const
    return (row < height && col < width) ? matrix[row][col] : 0;
 }
 
-unsigned **Matrix::makeNewMatrix (std::size_t newHeight, std::size_t newWidth, const Matrix *m1, MatrixOperator *pMo, const Matrix *m2)
+void Matrix::makeNewMatrix(const Matrix* m1, const MatrixOperator* mo, const Matrix* m2)
 {
    if (m1 != nullptr && m2 != nullptr && m1->modulus != m2->modulus)
-      throw invalid_argument("Les deux matrices operees n ont pas le meme modulo.");
+      throw invalid_argument("Les deux matrices doivent avoir le meme module.");
 
-   if (newHeight == 0 || newWidth == 0)
-      throw runtime_error("Argument(s) invalide(s)");
+   if(m1 == nullptr)
+      throw runtime_error("m1 cannot be nullptr in makeNewMatrix");
 
-   bool operation = (m1 != nullptr && m2 != nullptr && pMo != nullptr);
+   bool toOperate = m2 != nullptr && mo != nullptr;
 
-   unsigned **temp = new unsigned *[newHeight];
+   unsigned newWidth  = toOperate ? max(m1->width , m2->width ) : m1->width ;
+   unsigned newHeight = toOperate ? max(m1->height, m2->height) : m1->height;
+
+   unsigned** temp = new unsigned *[newHeight];
 
    for (size_t i = 0; i < newHeight; ++i)
    {
@@ -243,20 +180,41 @@ unsigned **Matrix::makeNewMatrix (std::size_t newHeight, std::size_t newWidth, c
 
       for (size_t j = 0; j < newWidth; ++j)
       {
-         if(operation)
+         if(toOperate)
          {
             unsigned v1 = m1->getElementNoException(i,j);
             unsigned v2 = m2->getElementNoException(i,j);
-
-            temp[i][j] = ( pMo->operation(v1, v2) + modulus ) % modulus;
+            temp[i][j] = ( mo->operation(v1, v2) + m1->modulus ) % m1->modulus;
          }
-        else
+         else
          {
-            temp[i][j] = rand() % modulus;
+            temp[i][j] = m1->matrix[i][j];
          }
       }
    }
 
-   return temp;
+   freeContent();
+   swap(matrix, temp);
+   modulus = m1->modulus;
+   height = newHeight;
+   width  = newWidth;
 }
+
+Matrix Matrix::opToVal (const Matrix &m, const MatrixOperator *op) const
+{
+   return Matrix(this, op, &m);
+}
+
+Matrix& Matrix::opOnSelf (const Matrix &m, const MatrixOperator *op)
+{
+   makeNewMatrix(this, op, &m);
+   return *this;
+}
+
+Matrix* Matrix::opToPtr (const Matrix &m, const MatrixOperator *op) const
+{
+   return new Matrix(this, op, &m);
+}
+
+
 

@@ -128,18 +128,31 @@ CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatrixSub.cpp" -o CMakeFiles\POO2_labo1.dir\MatrixSub.cpp.s
 
-CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj: CMakeFiles/POO2_labo1.dir/flags.make
-CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj: ../MatriceMult.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POO2_labo1.dir\MatriceMult.cpp.obj -c "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatriceMult.cpp"
+CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj: CMakeFiles/POO2_labo1.dir/flags.make
+CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj: ../MatrixMult.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POO2_labo1.dir\MatrixMult.cpp.obj -c "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatrixMult.cpp"
 
-CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatriceMult.cpp" > CMakeFiles\POO2_labo1.dir\MatriceMult.cpp.i
+CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatrixMult.cpp" > CMakeFiles\POO2_labo1.dir\MatrixMult.cpp.i
 
-CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatriceMult.cpp" -o CMakeFiles\POO2_labo1.dir\MatriceMult.cpp.s
+CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\MatrixMult.cpp" -o CMakeFiles\POO2_labo1.dir\MatrixMult.cpp.s
+
+CMakeFiles/POO2_labo1.dir/Utils.cpp.obj: CMakeFiles/POO2_labo1.dir/flags.make
+CMakeFiles/POO2_labo1.dir/Utils.cpp.obj: ../Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/POO2_labo1.dir/Utils.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POO2_labo1.dir\Utils.cpp.obj -c "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\Utils.cpp"
+
+CMakeFiles/POO2_labo1.dir/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POO2_labo1.dir/Utils.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\Utils.cpp" > CMakeFiles\POO2_labo1.dir\Utils.cpp.i
+
+CMakeFiles/POO2_labo1.dir/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POO2_labo1.dir/Utils.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\Utils.cpp" -o CMakeFiles\POO2_labo1.dir\Utils.cpp.s
 
 # Object files for target POO2_labo1
 POO2_labo1_OBJECTS = \
@@ -147,7 +160,8 @@ POO2_labo1_OBJECTS = \
 "CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj" \
 "CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj" \
 "CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj" \
-"CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj"
+"CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj" \
+"CMakeFiles/POO2_labo1.dir/Utils.cpp.obj"
 
 # External object files for target POO2_labo1
 POO2_labo1_EXTERNAL_OBJECTS =
@@ -156,12 +170,13 @@ POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/main.cpp.obj
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj
-POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/MatriceMult.cpp.obj
+POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj
+POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/Utils.cpp.obj
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/build.make
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/linklibs.rsp
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/objects1.rsp
 POO2_labo1.exe: CMakeFiles/POO2_labo1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable POO2_labo1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\melvy\Desktop\Application\Drive\HEIG_VD\4em semestre\POO2\labo1\POO2_labo1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable POO2_labo1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\POO2_labo1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

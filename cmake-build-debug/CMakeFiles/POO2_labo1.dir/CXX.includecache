@@ -13,11 +13,17 @@ ostream
 -
 MatrixOperator.h
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
+Utils.h
+C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.h
 
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
 
+C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.h
+
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/main.cpp
 iostream
+-
+cstdlib
 -
 Matrix.h
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Matrix.h

@@ -13,16 +13,18 @@
  -----------------------------------------------------------------------------------
  */
 
-#ifndef POO2_LABO1_MATRICEMULT_H
-#define POO2_LABO1_MATRICEMULT_H
+#ifndef POO2_LABO1_MATRIXMULT_H
+#define POO2_LABO1_MATRIXMULT_H
 
 #include "MatrixOperator.h" // operation
 
 /**
  * @brief Classe mettant en oeuvre les multiplications
  *        qui peuvent être effectuée par la classe Matrix.
+ * @authors Forestier Quentin, Herzig Melvyn
+ * @date 03-03-2021
  */
-class MatriceMult : public MatrixOperator
+class MatrixMult : public MatrixOperator
 {
 public:
 
@@ -36,4 +38,4 @@ public:
 };
 
 
-#endif //POO2_LABO1_MATRICEMULT_H
+#endif //POO2_LABO1_MATRIXMULT_H

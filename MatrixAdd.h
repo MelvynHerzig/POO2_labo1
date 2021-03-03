@@ -22,6 +22,8 @@
 /**
  * @brief Classe mettant en oeuvre les additions
  *        qui peuvent être effectuée par la classe Matrix.
+ * @authors Forestier Quentin, Herzig Melvyn
+ * @date 03-03-2021
  */
 class MatrixAdd : public MatrixOperator
 {
