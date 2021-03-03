@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj"
   "CMakeFiles/POO2_labo1.dir/MatrixMult.cpp.obj"
   "CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj"
+  "CMakeFiles/POO2_labo1.dir/Utils.cpp.obj"
   "CMakeFiles/POO2_labo1.dir/main.cpp.obj"
   "POO2_labo1.exe"
   "POO2_labo1.exe.manifest"

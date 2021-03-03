@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Matrix.cpp
-stdexcept
--
-time.h
--
-algorithm
--
-MatrixMult.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixMult.h
-MatrixAdd.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixAdd.h
-MatrixSub.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixSub.h
-Matrix.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Matrix.h
-
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Matrix.h
 cstdlib
 -
@@ -29,23 +13,17 @@ ostream
 -
 MatrixOperator.h
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
-
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixAdd.h
-MatrixOperator.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
-
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixMult.h
-MatrixOperator.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
+Utils.h
+C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.h
 
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
 
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixSub.h
-MatrixOperator.h
-C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixOperator.h
+C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.h
 
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/main.cpp
 iostream
+-
+cstdlib
 -
 Matrix.h
 C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Matrix.h

@@ -10,11 +10,11 @@
  */
 
 #include <stdexcept>     // runtime_error
-#include <time.h>        // time
 #include <algorithm>     // swap
-#include "MatrixMult.h" // MatrixMult
+#include "MatrixMult.h"  // MatrixMult
 #include "MatrixAdd.h"   // MatrixAdd
 #include "MatrixSub.h"   // MatrixSub
+#include "Utils.h"       // positiveInteger
 
 #include "Matrix.h"
 
@@ -33,7 +33,7 @@ ostream& operator<< (ostream& os, const Matrix& m)
       os << endl;
    }
 
-   return os << endl;
+   return os;
 }
 
 // ----------- Constructeurs ------------
@@ -52,15 +52,14 @@ Matrix::Matrix (size_t height, size_t width, unsigned modulus) : modulus(modulus
 
    matrix = new unsigned *[height];
 
-   srand((unsigned)time(NULL));
-
    for (size_t i = 0; i < height; ++i)
    {
       matrix[i] = new unsigned[width];
 
       for (size_t j = 0; j < width; ++j)
       {
-         matrix[i][j] = (unsigned) rand() % modulus;
+         matrix[i][j] = Utils::positiveInteger(modulus);
+
       }
    }
 }
@@ -85,7 +84,7 @@ Matrix &Matrix::operator*= (const Matrix &m)
    MatrixMult op = MatrixMult();
    return opOnSelf(m, &op);
 }
-Matrix *Matrix::multToPtr (const Matrix &m)
+Matrix *Matrix::multToPtr (const Matrix &m) const
 {
    MatrixMult op = MatrixMult();
    return opToPtr(m, &op);
@@ -103,7 +102,7 @@ Matrix &Matrix::operator+= (const Matrix &m)
    return opOnSelf(m, &op);
 }
 
-Matrix *Matrix::addToPtr (const Matrix &m)
+Matrix *Matrix::addToPtr (const Matrix &m) const
 {
    MatrixAdd op = MatrixAdd();
    return opToPtr(m, &op);
@@ -121,7 +120,7 @@ Matrix &Matrix::operator-= (const Matrix &m)
    return opOnSelf(m, &op);
 }
 
-Matrix* Matrix::subToPtr (const Matrix &m)
+Matrix* Matrix::subToPtr (const Matrix &m) const
 {
    MatrixSub op = MatrixSub();
    return opToPtr(m, &op);
@@ -165,12 +164,15 @@ void Matrix::makeNewMatrix(const Matrix* m1, const MatrixOperator* mo, const Mat
    if (m1 != nullptr && m2 != nullptr && m1->modulus != m2->modulus)
       throw invalid_argument("Les deux matrices doivent avoir le meme module.");
 
-   bool binary = m2 != nullptr && mo != nullptr;
+   if(m1 == nullptr)
+      throw runtime_error("m1 cannot be nullptr in makeNewMatrix");
 
-   unsigned newWidth  = binary ? max(m1->width , m2->width ) : m1->width ;
-   unsigned newHeight = binary ? max(m1->height, m2->height) : m1->height;
+   bool toOperate = m2 != nullptr && mo != nullptr;
 
-   unsigned **temp = new unsigned *[newHeight];
+   unsigned newWidth  = toOperate ? max(m1->width , m2->width ) : m1->width ;
+   unsigned newHeight = toOperate ? max(m1->height, m2->height) : m1->height;
+
+   unsigned** temp = new unsigned *[newHeight];
 
    for (size_t i = 0; i < newHeight; ++i)
    {
@@ -178,7 +180,7 @@ void Matrix::makeNewMatrix(const Matrix* m1, const MatrixOperator* mo, const Mat
 
       for (size_t j = 0; j < newWidth; ++j)
       {
-         if(binary)
+         if(toOperate)
          {
             unsigned v1 = m1->getElementNoException(i,j);
             unsigned v2 = m2->getElementNoException(i,j);
@@ -209,7 +211,7 @@ Matrix& Matrix::opOnSelf (const Matrix &m, const MatrixOperator *op)
    return *this;
 }
 
-Matrix* Matrix::opToPtr (const Matrix &m, const MatrixOperator *op)
+Matrix* Matrix::opToPtr (const Matrix &m, const MatrixOperator *op) const
 {
    return new Matrix(this, op, &m);
 }

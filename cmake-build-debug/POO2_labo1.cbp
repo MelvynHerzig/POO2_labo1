@@ -109,6 +109,12 @@
 		<Unit filename="C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/MatrixSub.h">
 			<Option target="POO2_labo1"/>
 		</Unit>
+		<Unit filename="C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.cpp">
+			<Option target="POO2_labo1"/>
+		</Unit>
+		<Unit filename="C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/Utils.h">
+			<Option target="POO2_labo1"/>
+		</Unit>
 		<Unit filename="C:/Users/melvy/Desktop/Application/Drive/HEIG_VD/4em semestre/POO2/labo1/POO2_labo1/main.cpp">
 			<Option target="POO2_labo1"/>
 		</Unit>

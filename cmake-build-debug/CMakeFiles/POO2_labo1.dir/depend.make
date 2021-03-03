@@ -7,6 +7,7 @@ CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj: ../MatrixAdd.h
 CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj: ../MatrixMult.h
 CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj: ../MatrixOperator.h
 CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj: ../MatrixSub.h
+CMakeFiles/POO2_labo1.dir/Matrix.cpp.obj: ../Utils.h
 
 CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj: ../MatrixAdd.cpp
 CMakeFiles/POO2_labo1.dir/MatrixAdd.cpp.obj: ../MatrixAdd.h
@@ -20,7 +21,11 @@ CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj: ../MatrixOperator.h
 CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj: ../MatrixSub.cpp
 CMakeFiles/POO2_labo1.dir/MatrixSub.cpp.obj: ../MatrixSub.h
 
+CMakeFiles/POO2_labo1.dir/Utils.cpp.obj: ../Utils.cpp
+CMakeFiles/POO2_labo1.dir/Utils.cpp.obj: ../Utils.h
+
 CMakeFiles/POO2_labo1.dir/main.cpp.obj: ../Matrix.h
 CMakeFiles/POO2_labo1.dir/main.cpp.obj: ../MatrixOperator.h
+CMakeFiles/POO2_labo1.dir/main.cpp.obj: ../Utils.h
 CMakeFiles/POO2_labo1.dir/main.cpp.obj: ../main.cpp
 

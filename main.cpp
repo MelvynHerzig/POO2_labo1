@@ -14,6 +14,7 @@
  */
 
 #include <iostream> // cout
+#include <cstdlib>  // EXIT_SUCCESS
 
 #include "Matrix.h"
 
@@ -37,98 +38,211 @@ int main (int argc, char *argv[])
    y2 = stoul(argv[4]);
    modulus = stoul(argv[5]);
 
-   cout << "\n------------ Test des entrees utilisateur ------------ \n"
-        << "The modulus is "  << modulus << endl << endl;
-
-   Matrix m1 = Matrix(x1, y1, modulus);
-   Matrix m2 = Matrix(x2, y2, modulus);
-
-   cout << "m1\n" << m1 << endl;
-   cout << "m2\n" << m2 << endl;
-
-   cout << "\n m1 - m2 (par valeur statique) \n"
-        << m1 - m2 << endl;
-
-   cout << "\n m1 + m2 (par valeur statique) \n"
-        << m1 + m2 << endl;
-
-   cout << "\n m1 * m2 (par valeur statique) \n"
-        << m1 * m2 << endl;
-
-   Matrix m4 = Matrix(m1);
-   cout << "\n m1 -= m2 (par reference) \n"
-        << (m4 -= m2) << endl;
-
-   cout << "\n m1 += m2 (par reference) \n"
-        << (Matrix(m1) += m2) << endl;
-
-   cout << "\n m1 *= m2 (par reference) \n"
-        << (Matrix(m1) *= m2) << endl;
-
-   Matrix* m = m1.subToPtr(m2);
-   cout << "\n m1.subToPtr(m2) (par pointeur dynamique) \n"
-        << *m << endl;
-   delete m;
-
-   m = m1.addToPtr(m2);
-   cout << "\n m1.addToPtr(m2) (par pointeur dynamique) \n"
-        << *m << endl;
-   delete m;
-
-   m = m1.multToPtr(m2);
-   cout << "\n m1.multToPtr(m2) (par pointeur dynamique) \n"
-        << *m << endl;
-   delete m;
-
-   cout << "\n------------ Test des cas limites ------------" << endl;
-
-   try
    {
-      cout << "Test de matrice avec un modulo incorrecte :" << endl;
-      Matrix badModulus = Matrix( x1, y1,0);
-   }
-   catch (runtime_error e)
-   {
-      cout << e.what() << endl;
+      cout << "\n------------ TEST MATRICES NON CONSTANTES ------------ \n"
+           << "The modulus is "  << modulus << endl << endl;
+
+      Matrix m1 = Matrix(x1, y1, modulus);
+      Matrix m2 = Matrix(x2, y2, modulus);
+
+      cout << "m1\n" << m1 << endl;
+      cout << "m2\n" << m2 << endl;
+
+      cout << "\n m1 - m2 (par valeur statique) \n"
+           << m1 - m2 << endl;
+
+      cout << "\n m1 + m2 (par valeur statique) \n"
+           << m1 + m2 << endl;
+
+      cout << "\n m1 * m2 (par valeur statique) \n"
+           << m1 * m2 << endl;
+
+      Matrix m4 = Matrix(m1);
+      cout << "\n m1 -= m2 (par reference) \n"
+           << (m4 -= m2) << endl;
+
+      cout << "\n m1 += m2 (par reference) \n"
+           << (Matrix(m1) += m2) << endl;
+
+      cout << "\n m1 *= m2 (par reference) \n"
+           << (Matrix(m1) *= m2) << endl;
+
+      Matrix* m = m1.subToPtr(m2);
+      cout << "\n m1.subToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      m = m1.addToPtr(m2);
+      cout << "\n m1.addToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      m = m1.multToPtr(m2);
+      cout << "\n m1.multToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      cout << "m1 = m2" << endl;
+      m1 = m2;
+
+      cout << "m1\n" << m1 << endl;
+      cout << "m2\n" << m2 << endl;
+
+      cout << "\n------------ Test des cas limites ------------" << endl;
+
+      try
+      {
+         cout << "Test de matrice avec un modulo incorrecte :" << endl;
+         Matrix badModulus = Matrix( x1, y1,0);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une operation avec un modulo different :" << endl;
+         Matrix m1 = Matrix(x1, x2, modulus);
+         Matrix m2 = Matrix(x1, x2, modulus + 1);
+         m1 + m2;
+      }
+      catch (invalid_argument e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une matrice vide (largeur nulle) :" << endl;
+         Matrix m1 = Matrix(x1, 0, modulus);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une matrice vide (hauteur nulle) :" << endl;
+         Matrix m1 = Matrix(0, y1, modulus);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
    }
 
-   cout << endl;
+   {
+      cout << "\n------------ TEST MATRICES CONSTANTES ------------ \n"
+           << "The modulus is "  << modulus << endl << endl;
 
-   try
-   {
-      cout << "\"Test d'une operation avec un modulo different :" << endl;
-      Matrix m1 = Matrix(x1, x2, modulus);
-      Matrix m2 = Matrix(x1, x2, modulus + 1);
-      m1 + m2;
-   }
-   catch (invalid_argument e)
-   {
-      cout << e.what() << endl;
+      const Matrix m1 = Matrix(x1, y1, modulus);
+      const Matrix m2 = Matrix(x2, y2, modulus);
+
+      cout << "m1\n" << m1 << endl;
+      cout << "m2\n" << m2 << endl;
+
+      cout << "\n m1 - m2 (par valeur statique) \n"
+           << m1 - m2 << endl;
+
+      cout << "\n m1 + m2 (par valeur statique) \n"
+           << m1 + m2 << endl;
+
+      cout << "\n m1 * m2 (par valeur statique) \n"
+           << m1 * m2 << endl;
+
+// Ne compile pas car permissif de cast const en non const -> validé
+//      Matrix m4 = Matrix(m1);
+//      cout << "\n m1 -= m2 (par reference) \n"
+//           << (m4 -= m2) << endl;
+//
+//      cout << "\n m1 += m2 (par reference) \n"
+//           << (Matrix(m1) += m2) << endl;
+//
+//      cout << "\n m1 *= m2 (par reference) \n"
+//           << (Matrix(m1) *= m2) << endl;
+
+      Matrix* m = m1.subToPtr(m2);
+      cout << "\n m1.subToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      m = m1.addToPtr(m2);
+      cout << "\n m1.addToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      m = m1.multToPtr(m2);
+      cout << "\n m1.multToPtr(m2) (par pointeur dynamique) \n"
+           << *m << endl;
+      delete m;
+
+      cout << "\n------------ Test des cas limites ------------" << endl;
+
+      try
+      {
+         cout << "Test de matrice avec un modulo incorrecte :" << endl;
+         Matrix badModulus = Matrix( x1, y1,0);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une operation avec un modulo different :" << endl;
+         Matrix m1 = Matrix(x1, x2, modulus);
+         Matrix m2 = Matrix(x1, x2, modulus + 1);
+         m1 + m2;
+      }
+      catch (invalid_argument e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une matrice vide (largeur nulle) :" << endl;
+         Matrix m1 = Matrix(x1, 0, modulus);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
+
+      cout << endl;
+
+      try
+      {
+         cout << "\"Test d'une matrice vide (hauteur nulle) :" << endl;
+         Matrix m1 = Matrix(0, y1, modulus);
+      }
+      catch (runtime_error e)
+      {
+         cout << e.what() << endl;
+      }
+
+// Ne compile pas affectation sur un objet constant impossible -> validé.
+//      cout << "m1 = m2" << endl;
+//      m1 = m2;
+//
+//      cout << "m1\n" << m1 << endl;
+//      cout << "m2\n" << m2 << endl;
    }
 
-   cout << endl;
 
-   try
-   {
-      cout << "\"Test d'une matrice vide (largeur nulle) :" << endl;
-      Matrix m1 = Matrix(x1, 0, modulus);
-   }
-   catch (runtime_error e)
-   {
-      cout << e.what() << endl;
-   }
-
-   cout << endl;
-
-   try
-   {
-      cout << "\"Test d'une matrice vide (hauteur nulle) :" << endl;
-      Matrix m1 = Matrix(0, y1, modulus);
-   }
-   catch (runtime_error e)
-   {
-      cout << e.what() << endl;
-   }
 
    return EXIT_SUCCESS;
 }
