@@ -1,7 +1,7 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : POO2 labo_01
- Fichier     : MatrixOperator.h
+ Fichier     : MatrixAdd.cpp
  Auteur(s)   : Forestier Quentin & Melvyn Herzig
  Date        : 24.02.2021
 

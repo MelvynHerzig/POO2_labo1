@@ -1,7 +1,7 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : POO2 labo_01
- Fichier     : Ultils.h
+ Fichier     : Ultils.cpp
  Auteur(s)   : Forestier Quentin & Melvyn Herzig
  Date        : 24.02.2021
 
