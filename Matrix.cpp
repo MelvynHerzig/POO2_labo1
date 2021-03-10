@@ -40,12 +40,14 @@ ostream& operator<< (ostream& os, const Matrix& m)
 Matrix::Matrix () : modulus(1), matrix(nullptr), height(0), width(0)
 {}
 
-Matrix::Matrix (const Matrix* m1, const MatrixOperator* mo, const Matrix* m2) : matrix(nullptr), height(0), width(0)
+Matrix::Matrix (const Matrix* m1, const MatrixOperator* mo, const Matrix* m2)
+   : matrix(nullptr), height(0), width(0)
 {
    makeNewMatrix(m1, mo, m2);
 }
 
-Matrix::Matrix (size_t height, size_t width, unsigned modulus) : modulus(modulus), height(height), width(width)
+Matrix::Matrix (size_t height, size_t width, unsigned modulus)
+   : modulus(modulus), height(height), width(width)
 {
    if(height == 0 || width == 0 || modulus == 0)
       throw runtime_error("La taille et le module ne peuvent etre egaux a 0.");
@@ -165,7 +167,7 @@ void Matrix::makeNewMatrix(const Matrix* m1, const MatrixOperator* mo, const Mat
       throw invalid_argument("Les deux matrices doivent avoir le meme module.");
 
    if(m1 == nullptr)
-      throw runtime_error("m1 cannot be nullptr in makeNewMatrix");
+      throw runtime_error("m1 ne peut pas être nullptr dans makeNewMatrix");
 
    bool toOperate = m2 != nullptr && mo != nullptr;
 
